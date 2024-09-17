@@ -121,6 +121,7 @@
   
     .remove-task,
     .complete-task {
+        padding: 5% 10%;
       width: 15%;
       margin: 5px 5px;
     }
