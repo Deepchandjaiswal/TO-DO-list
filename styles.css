@@ -1,33 +1,36 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-} 
-body {
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 10%;
-}
-
-h1 {
+/* Global reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    margin: 0;
+  }
+  
+  /* Header styling */
+  h1 {
     margin-bottom: 20px;
     text-align: center;
-}
-
-.input-group {
+  }
+  
+  /* Input group styling */
+  .input-group {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-}
-
-#taskInput {
-    flex: 1;
+  }
+  
+  #taskInput {
     padding: 10px;
     font-size: 16px;
-}
-
-#addTaskButton {
+  }
+  
+  #addTaskButton {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
@@ -35,36 +38,41 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-#addTaskButton:hover {
+  }
+  
+  #addTaskButton:hover {
     background-color: #0056b3;
-}
-
-ul {
+  }
+  
+  /* List styling */
+  ul {
     list-style: none;
     padding: 0;
-}
-
-li {
+  }
+  
+  li {
     display: flex;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-}
-
-.completed .task-text {
+    flex-wrap: wrap;
+  }
+  
+  /* Completed task styling */
+  .completed .task-text {
     text-decoration: line-through;
     color: #888;
-}
-
-.task-text {
+  }
+  
+  .task-text {
     flex: 1;
     font-weight: 600;
     font-size: 20px;
-}
-
-.remove-task {
+  }
+  
+  /* Buttons styling */
+  .remove-task,
+  .complete-task {
     background-color: red;
     color: white;
     border: none;
@@ -72,23 +80,92 @@ li {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-}
-
-.remove-task:hover {
-    background-color: darkred;
-}
-
-.complete-task {
-    background-color: green;
-    color: white;
-    border: none;
-    font-size: 16px;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
     margin-right: 10px;
-}
-
-.complete-task:hover {
+  }
+  
+  .remove-task:hover {
+    background-color: darkred;
+  }
+  
+  .complete-task {
+    background-color: green;
+  }
+  
+  .complete-task:hover {
     background-color: darkgreen;
-}
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* Small screens (phones, 600px and down) */
+  @media (max-width: 600px) {
+    body {
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 10% 5% 5% 5%;
+      }
+    .input-group {
+      flex-direction:row;
+    }
+  
+    #addTaskButton {
+      width: 100%;
+    }
+  
+    li {
+      flex-direction: row;
+    }
+  
+    .remove-task,
+    .complete-task {
+      width: 10%;
+      margin: 5px 5px;
+    }
+  }
+  
+  /* Medium screens (tablets, 600px to 900px) */
+  @media (min-width: 601px) and (max-width: 900px) {
+    body {
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 10%;
+      }
+    .input-group {
+      flex-direction: column;
+    }
+  
+    #taskInput {
+      margin-bottom: 10px;
+    }
+  
+    #addTaskButton {
+      width: 100%;
+    }
+  }
+  
+  /* Large screens (desktops, 900px and up) */
+  @media (min-width: 901px) {
+    body {
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 10%;
+      }
+    .input-group {
+      flex-direction: row;
+    }
+  
+    #addTaskButton {
+      width: auto;
+    }
+  
+    li {
+      flex-direction: row;
+    }
+  
+    .remove-task,
+    .complete-task {
+      width: auto;
+      margin: 0 5px;
+    }
+  }
+  
