@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         li.innerHTML = `
             <span class="task-text">${taskText}</span>
-            <button class="complete-task">Complete</button>
-            <button class="remove-task">Remove</button>
+            <button class="complete-task"><i class='fa-solid fa-check'></i></button>
+            <button class="remove-task"><i class="fa-solid fa-trash"></i></button>
         `;
 
         // Complete task event
